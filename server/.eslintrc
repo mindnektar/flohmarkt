@@ -1,0 +1,17 @@
+{
+  "parser": "@babel/eslint-parser",
+  "extends": "care",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "requireConfigFile": false
+  },
+  "env": {
+    "node": true
+  },
+  "plugins": ["@babel"],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  }
+}

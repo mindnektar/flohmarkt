@@ -1,0 +1,10 @@
+version: '3.5'
+
+services:
+  server:
+    volumes:
+      - flohmarkt-sync:/app/server:nocopy
+
+volumes:
+  flohmarkt-sync:
+    external: true

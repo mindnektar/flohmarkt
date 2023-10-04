@@ -1,0 +1,11 @@
+version: '2'
+syncs:
+  flohmarkt-sync:
+    src: './server'
+    sync_strategy: 'unison'
+    sync_userid: '1000'
+    sync_args:
+      - "-ignorecase=false"
+      - "-prefer=newer"
+      - "-times=true"
+      - "-copyonconflict=false"
