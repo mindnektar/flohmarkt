@@ -1,6 +1,8 @@
 import jwt from 'jsonwebtoken';
 import { WebSocketServer } from 'ws';
 import { useServer } from 'graphql-ws/lib/use/ws';
+import config from 'config';
+import authorize from 'auth';
 
 const ALLOWED_JWT_ALGORITHMS = ['HS256', 'HS384', 'HS512'];
 
@@ -16,15 +18,14 @@ export default (schema) => {
                     const data = token && token.startsWith('Bearer ') ? (
                         jwt.verify(
                             token.replace('Bearer ', ''),
-                            'some-secret',
+                            config.jwt.secret,
                             { algorithms: ALLOWED_JWT_ALGORITHMS },
                         )
                     ) : (
                         null
                     );
-                    const auth = null; // await authorize(data, token);
 
-                    return { auth };
+                    return { auth: await authorize(data) };
                 },
             },
             webSocketServer,

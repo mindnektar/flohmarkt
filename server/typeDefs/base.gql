@@ -1,0 +1,12 @@
+scalar Date
+scalar DateTime
+scalar Email
+scalar Token
+
+type DeletedItem {
+    id: ID!
+}
+
+input RelateInput {
+    id: ID!
+}

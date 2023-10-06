@@ -14,9 +14,9 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=care
+      - POSTGRES_USER=flohmarkt
       - POSTGRES_PASSWORD=secret
-      - POSTGRES_DB=care
+      - POSTGRES_DB=flohmarkt
 
   redis:
     image: redis:5.0.0-alpine

@@ -1,0 +1,32 @@
+type Mutation {
+    createArticle(input: CreateArticleInput!): Article!
+    updateArticle(input: UpdateArticleInput!): Article!
+    deleteArticle(id: ID!): DeletedItem!
+}
+
+type Article {
+    id: ID!
+    key: Int!
+    title: String!
+    info: String!
+    price: Float!
+    isNew: Boolean!
+    vendor: Vendor!
+    sale: Sale
+}
+
+input CreateArticleInput {
+    title: String!
+    info: String!
+    price: Float!
+    isNew: Boolean!
+    vendorId: ID!
+}
+
+input UpdateArticleInput {
+    id: ID!
+    title: String
+    info: String
+    price: Float
+    isNew: Boolean
+}

@@ -2,6 +2,37 @@ type Query {
     users: [User!]!
 }
 
+type Mutation {
+    createUser(input: CreateUserInput!): User!
+    updateUser(input: UpdateUserInput!): User!
+    deleteUser(id: ID!): DeletedItem!
+}
+
 type User {
     id: ID!
+    role: UserRole!
+    email: Email!
+    firstName: String!
+    lastName: String!
+    vendors: [Vendor!]!
+}
+
+enum UserRole {
+    admin
+    vendor
+}
+
+input CreateUserInput {
+    email: Email!
+    password: String!
+    firstName: String!
+    lastName: String!
+}
+
+input UpdateUserInput {
+    id: ID!
+    email: Email
+    password: String
+    firstName: String
+    lastName: String
 }

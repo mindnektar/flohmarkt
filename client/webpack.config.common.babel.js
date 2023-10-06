@@ -11,7 +11,7 @@ export default {
     context: __dirname,
 
     entry: {
-        app: './app/index.jsx',
+        app: './application/index.jsx',
     },
 
     output: {
@@ -24,10 +24,10 @@ export default {
     resolve: {
         extensions: ['.js', '.jsx', '.json'],
         modules: [
-            'app',
-            'app/components',
-            'app/components/common',
-            'app/components/ui',
+            'application',
+            'application/components',
+            'application/components/common',
+            'application/components/ui',
             'node_modules',
         ],
     },

@@ -60,7 +60,6 @@ const wrapResolver = (name, type, { fixture, authorization, resolve, onComplete,
             }
 
             if (authorization && !authorization(parent, variables, resolverContext, info)) {
-                await context.auth.deleteFromCache();
                 throw new ClientError(ClientError.CODE.AUTHORIZATION_REQUIRED, {
                     resolver: name,
                     auth: context.auth,

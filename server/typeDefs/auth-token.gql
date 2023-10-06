@@ -1,0 +1,14 @@
+type Mutation {
+    createAuthToken(input: CreateAuthTokenInput!): CreateAuthTokenResult!
+}
+
+type CreateAuthTokenResult {
+    authToken: Token!
+    refreshToken: Token!
+    role: UserRole!
+}
+
+input CreateAuthTokenInput {
+    email: String!
+    password: String!
+}

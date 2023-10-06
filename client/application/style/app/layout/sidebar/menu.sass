@@ -1,0 +1,34 @@
+.menu
+    &__group
+        margin-bottom: 32px
+
+    &__group-label
+        border-bottom: 2px solid $color-blue
+        font-size: 12px
+        font-weight: 700
+        margin-bottom: 12px
+        padding: 0 0 2px 12px
+        text-transform: uppercase
+
+    &__item
+        background-color: $color-white
+        border: 1px solid $color-blue
+        border-left: 4px solid $color-blue
+        border-radius: 8px
+        border-right: 4px solid $color-blue
+        box-shadow: 0 2px 4px 0 rgba($color-blue, 0.2)
+        cursor: pointer
+        height: 32px
+        line-height: 32px
+        margin-bottom: 4px
+        padding-left: 8px
+        transition-duration: 200ms
+        transition-property: border-color, color
+
+        &--active,
+        &:hover
+            border-color: $color-orange
+            color: $color-orange
+
+        &--active
+            pointer-events: none

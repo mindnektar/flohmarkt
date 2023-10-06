@@ -1,0 +1,29 @@
+.ui-button
+    background-color: $color-orange
+    border-radius: 4px
+    box-sizing: border-box
+    color: $color-white
+    cursor: pointer
+    display: inline-block
+    font-weight: 400
+    height: 32px
+    line-height: 32px
+    overflow: hidden
+    padding: 0 24px
+    position: relative
+    text-align: center
+    text-overflow: ellipsis
+    text-transform: uppercase
+    white-space: nowrap
+
+    &--light
+        background-color: $color-white
+        border: 1px solid $color-orange
+        color: $color-orange
+        line-height: 22px
+
+    &--disabled
+        background-color: $color-light-grey
+        cursor: default
+        pointer-events: none
+        user-select: none

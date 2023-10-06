@@ -1,0 +1,25 @@
+type Query {
+    vendor(id: ID!): Vendor!
+}
+
+type Mutation {
+    createVendor(input: CreateVendorInput!): Vendor!
+    approveVendor(id: ID!): Vendor!
+    denyVendor(id: ID!): Vendor!
+    deleteVendor(id: ID!): DeletedItem!
+}
+
+type Vendor {
+    id: ID!
+    key: Int!
+    isApproved: Boolean!
+    user: User!
+    market: Market!
+    articles: [Article!]!
+    sales: [Sale!]!
+}
+
+input CreateVendorInput {
+    userId: ID!
+    marketId: ID!
+}

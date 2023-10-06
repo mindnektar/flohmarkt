@@ -31,6 +31,7 @@ export class ClientError extends CareError {
     static get CODE() {
         return {
             AUTHORIZATION_REQUIRED: 'AUTHORIZATION_REQUIRED',
+            INVALID_CREDENTIALS: 'INVALID_CREDENTIALS',
             TOKEN_EXPIRED: 'TOKEN_EXPIRED',
         };
     }

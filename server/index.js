@@ -1,5 +1,6 @@
 import http from 'http';
 import express from 'express';
+import User from 'models/User';
 import createApolloServer from './apollo/server';
 import createExpressMiddleware from './apollo/expressMiddleware';
 import createExpressServer from './express/server';
@@ -22,6 +23,9 @@ import createExpressServer from './express/server';
 
     await apolloServer.start();
     createExpressServer(app, createExpressMiddleware(apolloServer));
+
+    await User.ensureAdminExists();
+
     await new Promise((resolve) => {
         httpServer.listen(4300, resolve);
     });

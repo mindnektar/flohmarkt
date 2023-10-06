@@ -17,6 +17,7 @@ export default merge(commonConfig, {
         host: '0.0.0.0',
         compress: false,
         hot: true,
+        historyApiFallback: true,
     },
 
     plugins: [

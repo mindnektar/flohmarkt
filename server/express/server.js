@@ -3,7 +3,8 @@ import cors from 'cors';
 import express from 'express';
 import { expressjwt } from 'express-jwt';
 import bodyParser from 'body-parser';
-import modifyBodyParserError from './server/middleware/modifyBodyParserError';
+import config from 'config';
+import resolveTokens from './server/middleware/resolveTokens';
 
 export default (app, apolloMiddleware) => {
     const corsMiddleware = cors();
@@ -11,14 +12,14 @@ export default (app, apolloMiddleware) => {
     app.use(
         '/api',
         expressjwt({
-            secret: 'some-secret',
+            secret: config.jwt.secret,
             credentialsRequired: false,
             algorithms: ['HS256', 'HS384', 'HS512'],
         }),
+        resolveTokens,
         corsMiddleware,
         bodyParser.json(),
         apolloMiddleware,
-        modifyBodyParserError,
     );
 
     app.use(express.static(path.join(__dirname, '../../client/public')));

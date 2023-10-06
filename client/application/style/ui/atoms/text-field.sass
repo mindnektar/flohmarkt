@@ -1,0 +1,51 @@
+.ui-text-field
+    position: relative
+    width: 100%
+
+.ui-text-field--disabled
+    pointer-events: none
+
+    .ui-text-field__input
+        background-color: $color-light-grey
+        border-color: transparent
+        color: $color-grey
+        cursor: default
+
+.ui-text-field--has-value
+    .ui-text-field__clear
+        opacity: 1
+        pointer-events: all
+
+.ui-text-field__input
+    appearance: none
+    background-color: $color-white
+    border: 1px solid $color-blue
+    border-radius: 4px
+    box-sizing: border-box
+    color: $color-dark-grey
+    font-family: Lato, sans-serif
+    font-size: 16px
+    height: 32px
+    outline: 0
+    padding: 0 18px
+    transition: 200ms
+    transition-property: border-color, background-color, color
+    width: 100%
+
+    &:focus
+        border-color: $color-orange
+
+    .ui-form-item--has-error &
+        border-color: $color-magenta
+
+.ui-text-field__clear
+    color: $color-grey
+    cursor: pointer
+    font-size: 19px
+    opacity: 0
+    pointer-events: none
+    position: absolute
+    right: 3px
+    top: 50%
+    transform: translateY(-50%)
+    transition: 100ms opacity

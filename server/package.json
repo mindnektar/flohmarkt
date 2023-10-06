@@ -11,11 +11,13 @@
     "@apollo/server": "4.9.3",
     "@graphql-tools/load-files": "7.0.0",
     "@graphql-tools/merge": "9.0.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "1.20.2",
     "convict": "6.2.4",
     "convict-format-with-validator": "6.2.0",
     "cors": "2.8.5",
     "express": "4.18.2",
+    "express-async-handler": "^1.2.0",
     "express-jwt": "8.4.1",
     "graphql": "16.8.1",
     "graphql-middleware": "6.1.35",
@@ -49,6 +51,10 @@
   },
   "resolutions": {
     "graphql": "16.8.1"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ext": "js,json,gql"
   },
   "babel": {
     "presets": [

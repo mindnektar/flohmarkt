@@ -1,0 +1,32 @@
+type Query {
+    markets: [Market!]!
+    market(id: ID!): Market!
+}
+
+type Mutation {
+    createMarket(input: CreateMarketInput!): Market!
+    updateMarket(input: UpdateMarketInput!): Market!
+    deleteMarket(id: ID!): DeletedItem!
+}
+
+type Market {
+    id: ID!
+    key: Int!
+    name: String!
+    startDate: Date!
+    endDate: Date!
+    vendors: [Vendor!]!
+}
+
+input CreateMarketInput {
+    name: String!
+    startDate: Date!
+    endDate: Date!
+}
+
+input UpdateMarketInput {
+    id: ID!
+    name: String
+    startDate: Date
+    endDate: Date
+}

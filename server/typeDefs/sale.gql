@@ -1,0 +1,22 @@
+type Mutation {
+    createSale(input: CreateSaleInput!): Sale!
+    updateSale(input: UpdateSaleInput!): Sale!
+    deleteSale(id: ID!): DeletedItem!
+}
+
+type Sale {
+    id: ID!
+    createdAt: DateTime!
+    vendor: Vendor!
+    articles: [Article!]!
+}
+
+input CreateSaleInput {
+    vendorId: ID!
+    articles: [RelateInput!]!
+}
+
+input UpdateSaleInput {
+    id: ID!
+    articles: [RelateInput!]!
+}

@@ -159,7 +159,7 @@ const config = convict({
         },
         connection: {
             format: String,
-            default: 'psql',
+            default: 'postgresql://flohmarkt:secret@postgres:5432/flohmarkt',
             env: 'POSTGRES_URI',
         },
         acquireConnectionTimeout: {
