@@ -1,0 +1,59 @@
+// stylelint-disable
+@import 'react-calendar/dist/Calendar.css'
+
+.react-calendar
+    border: 0
+    width: 100%
+
+    .react-calendar__navigation
+        gap: 4px
+        height: 32px
+        margin-bottom: 4px
+
+    .react-calendar__navigation__arrow
+        align-items: center
+        background-color: $color-blue
+        border-radius: 50%
+        color: $color-white
+        display: flex
+        justify-content: center
+        min-width: 32px
+
+    .react-calendar__navigation__label
+        align-items: center
+        background-color: $color-blue
+        border-radius: 4px
+        color: $color-white
+        display: flex
+        justify-content: center
+
+    .react-calendar__month-view__weekdays
+        gap: 4px
+
+    .react-calendar__month-view__weekdays__weekday
+        flex-basis: calc(14.2857% - 3.4285px) !important
+
+        abbr
+            text-decoration: none
+
+    .react-calendar__month-view__days
+        gap: 4px
+
+    .react-calendar__tile
+        border: 1px solid $color-blue
+        border-radius: 4px
+        flex-basis: calc(14.2857% - 3.4285px) !important
+        font-size: 14px
+        font-weight: 700
+        height: 32px
+        padding: 0
+        transition-duration: 150ms
+        transition-property: background-color, color
+
+        &--now
+            background-color: $color-white
+
+        &--active,
+        &:hover
+            background-color: $color-blue
+            color: $color-white

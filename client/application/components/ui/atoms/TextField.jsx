@@ -69,7 +69,9 @@ const TextField = forwardRef((props, ref) => {
                 ref={inputRef}
                 className="ui-text-field__input"
                 maxLength={props.maxLength}
+                onBlur={props.onBlur}
                 onChange={onChange}
+                onFocus={props.onFocus}
                 onKeyPress={onKeyPress}
                 type={props.type}
                 value={value}
@@ -90,9 +92,11 @@ const TextField = forwardRef((props, ref) => {
 TextField.defaultProps = {
     clearable: false,
     maxLength: 255,
+    onBlur: null,
     onChange: null,
     onClear: () => null,
     onClick: null,
+    onFocus: null,
     onSubmit: null,
     submitOnEnter: true,
     type: 'text',
@@ -102,9 +106,11 @@ TextField.defaultProps = {
 TextField.propTypes = {
     clearable: PropTypes.bool,
     maxLength: PropTypes.number,
+    onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onClear: PropTypes.func,
     onClick: PropTypes.func,
+    onFocus: PropTypes.func,
     onSubmit: PropTypes.func,
     submitOnEnter: PropTypes.bool,
     type: PropTypes.string,

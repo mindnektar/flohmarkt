@@ -1,0 +1,13 @@
+$z-index: 1
+
+@function z-index()
+    $z-index: $z-index + 1 !global
+    @return $z-index
+
+/* stylelint-disable */
+@mixin z
+    z-index: z-index()
+/* stylelint-enable */
+
+.ui-modal
+    @include z

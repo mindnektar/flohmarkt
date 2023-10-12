@@ -1,4 +1,5 @@
 import { onError } from '@apollo/client/link/error';
+import { AUTH_TYPE_NONE } from 'hooks/useAuth';
 
 export default (localStorageRef) => (
     onError(({ operation, graphQLErrors, networkError }) => {
@@ -9,6 +10,7 @@ export default (localStorageRef) => (
                         const { authType } = operation.getContext();
 
                         window.localStorage.removeItem(authType);
+                        localStorageRef.write('authType', AUTH_TYPE_NONE);
                         window.location.reload();
                     }
                 } else {

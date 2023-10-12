@@ -25,6 +25,7 @@ const Menu = () => {
         available: authType === AUTH_TYPE_ADMIN,
         items: [
             { label: 'Flohmärkte', path: '/admin/markets' },
+            { label: 'Kasse', path: '/admin/register' },
             { label: 'Admins', path: '/admin/admins' },
         ],
     }];
@@ -58,7 +59,9 @@ const Menu = () => {
                                 )}
                                 onClick={navigateHandler(item.path)}
                             >
-                                {item.label}
+                                <div className="menu__item-inner">
+                                    {item.label}
+                                </div>
                             </div>
                         ))}
                     </div>

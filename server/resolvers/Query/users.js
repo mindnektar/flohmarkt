@@ -4,7 +4,7 @@ export default {
     authorization: (_parent, _variables, { auth }) => (
         auth.isAdmin
     ),
-    resolve: (_parent, _variables, _context, info) => (
-        User.query().withGraphqlGraphFetched(info)
+    resolve: (_parent, { filter }, _context, info) => (
+        User.query().filter(filter).withGraphqlGraphFetched(info)
     ),
 };

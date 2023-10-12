@@ -11,10 +11,10 @@ type Mutation {
 
 type Market {
     id: ID!
-    key: Int!
     name: String!
     startDate: Date!
     endDate: Date!
+    isOpenForVendors: Boolean!
     vendors: [Vendor!]!
 }
 

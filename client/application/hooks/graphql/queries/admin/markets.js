@@ -1,7 +1,7 @@
 import { useQuery } from 'apollo-augmented-hooks';
 
 const query = `
-    query markets {
+    query adminMarkets {
         markets {
             id
             name

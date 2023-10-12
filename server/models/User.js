@@ -21,6 +21,14 @@ export default class User extends BaseModel {
         };
     }
 
+    static get filters() {
+        return {
+            role: (builder, value) => (
+                builder.where('role', value)
+            ),
+        };
+    }
+
     static async ensureAdminExists() {
         const admin = await User.query().where('role', 'admin').first();
 

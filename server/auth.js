@@ -20,10 +20,10 @@ export default async (data) => {
     const authorization = getAuthorization(data);
 
     try {
-        return authorization.parse(data);
-    } catch (error) {
-        console.error(error);
+        const auth = await authorization.parse(data);
 
+        return auth;
+    } catch (error) {
         return require('./auth/Base/Anonymous').default.parse();
     }
 };

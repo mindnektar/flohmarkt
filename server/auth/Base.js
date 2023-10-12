@@ -1,11 +1,7 @@
 import { getAuthorization } from 'auth';
 
 export default class BaseAuthorization {
-    setTokenData(tokenData) {
-        this.tokenData = tokenData;
-    }
-
-    async refresh(data = this.tokenData?.data) {
+    async refresh(data) {
         return getAuthorization(data).parse(data);
     }
 

@@ -4,6 +4,7 @@ import useAuth, { AUTH_TYPE_ADMIN, AUTH_TYPE_VENDOR } from 'hooks/useAuth';
 import PrivateRoute from 'PrivateRoute';
 import Home from './Page/Home';
 import Markets from './Page/Markets';
+import Admins from './Page/Admins';
 
 const Page = () => {
     const { authType } = useAuth();
@@ -28,6 +29,11 @@ const Page = () => {
                         <Route
                             component={Markets}
                             path="/admin/markets"
+                        />
+
+                        <Route
+                            component={Admins}
+                            path="/admin/admins"
                         />
                     </Switch>
                 </PrivateRoute>

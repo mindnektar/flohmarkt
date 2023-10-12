@@ -9,26 +9,42 @@
         margin-bottom: 12px
         padding: 0 0 2px 12px
         text-transform: uppercase
+        transform: skewX(-8deg)
 
     &__item
-        background-color: $color-white
-        border: 1px solid $color-blue
-        border-left: 4px solid $color-blue
+        align-items: center
+        background-color: $color-blue
         border-radius: 8px
-        border-right: 4px solid $color-blue
         box-shadow: 0 2px 4px 0 rgba($color-blue, 0.2)
         cursor: pointer
+        display: flex
         height: 32px
+        justify-content: center
         line-height: 32px
         margin-bottom: 4px
-        padding-left: 8px
-        transition-duration: 200ms
-        transition-property: border-color, color
+        transform: skewX(-8deg)
 
-        &--active,
         &:hover
-            border-color: $color-orange
-            color: $color-orange
+            color: $color-blue
+            font-weight: 700
+
+            .menu__item-inner
+                margin: 1px 8px
 
         &--active
+            color: $color-orange
+            font-weight: 700
             pointer-events: none
+
+            .menu__item-inner
+                margin: 1px 16px
+
+    &__item-inner
+        background-color: $color-white
+        border-radius: 4px
+        height: 30px
+        margin: 0 4px
+        padding: 0 8px
+        transition-duration: 150ms
+        transition-property: margin
+        width: 100%
